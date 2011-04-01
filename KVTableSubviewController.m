@@ -50,8 +50,8 @@
 }
 
 - (id)initWithStyle:(UITableViewStyle)style viewController:(UIViewController *)aViewController parentController:(id)aParentController {
-    NSParameterAssert(@"No parent view controller provided");
-    NSParameterAssert(@"No parent controller provided");
+    NSParameterAssert(aViewController);
+    NSParameterAssert(aParentController);
     NSAssert(([aParentController isKindOfClass:[UIViewController class]] || [aParentController isKindOfClass:[KVSubviewController class]]), @"The parent controller should be a (sub)class of UIViewController or a (sub)class of KVSubviewController");
     NSAssert(([aParentController isKindOfClass:[UIViewController class]] ? (aViewController == aParentController) : YES), @"If the parent controller is a (sub)class of UIViewController the parent view controller should be the same instance");
 
